@@ -149,6 +149,7 @@ function createHtmlAndPdfFiles(emlName, resultEml, callback){  //--- req and res
   //--- get HTML content of jade pdf
   var bodyString = fs.readFileSync('./views/HTMLTEMPLATES/basic.html');
   var body = _.template(bodyString.toString(), {eml: resultEml});
+  console.log("body: ",body);
   var freeport = Math.floor((Math.random()*10000)+1);
   phantom.create({'port': freeport},function(ph){
     ph.createPage(function(page){
@@ -172,7 +173,7 @@ function createHtmlAndPdfFiles(emlName, resultEml, callback){  //--- req and res
       page.open('http://localhost:3300'+pathFileHtmlGet, function (status) {
         page.render(CONFIG.PDF_DIR+emlName+"/"+emlName+".pdf", function(){
           ph.exit();
-//          fs.unlinkSync(pathFileHtml);//--- remove html file
+          fs.unlinkSync(pathFileHtml);//--- remove html file
           callback();
         });
       });
