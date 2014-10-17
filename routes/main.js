@@ -3,7 +3,7 @@ var phantom = require('phantom');
 var MailParser = require("mailparser").MailParser;
 var jade = require('jade');
 var CONFIG = require("../config");
-var _ = require("underscore");
+var Underscore = require("underscore");
 //var Template = require("./gnrt.js");
 
 exports.process = function(){
@@ -142,13 +142,13 @@ function parseEml(emlFileContent, callback){
 //=== CREATE STACK FOLDER, PDF FROM EML_FILE
 function createHtmlAndPdfFiles(emlName, resultEml, callback){  //--- req and res use to save variables, render html using phantom
   var date = new Date();
-  var pathFileHtml = 'public/HTMLs/'+/*date.toDateString()+'_'+*/date.getHours()+'_'+date.getMinutes()+'_'+date.getSeconds()+'_'+date.getMilliseconds()+'_EmailArchiver.html';
+  var pathFileHtml = 'public/HTMLs/'+/*date.toDateString()+'Underscore'+*/date.getHours()+'Underscore'+date.getMinutes()+'Underscore'+date.getSeconds()+'Underscore'+date.getMilliseconds()+'_EmailArchiver.html';
   var pathFileHtmlGet = pathFileHtml.replace("public","");
 
   //--- get HTML content of jade pdf
-  var bodyString = fs.readFileSync('./views/HTMLTEMPLATES/basic.html');
-  var body = _.template(bodyString.toString(), {eml: resultEml});
-  console.log("body: ",body);
+  var bodyString = fs.readFileSync('views/HTMLTEMPLATES/basic.html');
+  console.log("bodyString: ",bodyString.toString());
+  var body = Underscore.template(bodyString.toString(), {eml: resultEml});
   var freeport = Math.floor((Math.random()*10000)+1);
   phantom.create({'port': freeport},function(ph){
     ph.createPage(function(page){
