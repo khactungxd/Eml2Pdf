@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email</title>
+    <link rel='stylesheet' href='stylesheets/style.css'>
+    <script src='javascripts/jquery-1.9.0.min.js'></script>
+    <script src='javascripts/jscolor/jscolor.js'></script>
+    <script>
+        $(document).ready( function(){
+            $('#templateSelect').change(function(){
+                var skillSelect = document.getElementById("templateSelect");
+                var selectedValue = skillSelect.options[skillSelect.selectedIndex].value;
+                $("#tempId").val(selectedValue);
+                $( "#formEml" ).submit();
+            });
+            $('#textstyleSelect').change(function(){
+                var textstyleSelect = document.getElementById("textstyleSelect");
+                var textstyleValue = textstyleSelect.options[textstyleSelect.selectedIndex].value;
+                $("#textstyleSelect_input").val(textstyleValue);
+            });
+        });
+    </script>
+
+</head>
+
+
+<body style='background:white !important; width:1024px !important;'>
+    <div id="attachments">
+        <div style='background:#DED5FF !important; border-style: solid;border-width: 1px; padding: 10px'>
+            <p> From:       <%= eml.from%></p>
+            <p> To:         <%= eml.to%></p>
+            <p> Cc:         <%= eml.cc%></p>
+            <p> Subject:    <%= eml.subject%></p>
+            <p style='text-align:right;'><%= eml.time%></p>
+        </div>
+        <div style='margin: 2px;border-style: solid;border-width: 1px;padding: 10px;height: 100%' id="emlContent">
+            <p>
+                <%= eml.bodyContent%>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

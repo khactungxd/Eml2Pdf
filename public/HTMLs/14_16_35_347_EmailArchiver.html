@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email</title>
+    <link rel='stylesheet' href='stylesheets/style.css'>
+    <script src='javascripts/jquery-1.9.0.min.js'></script>
+    <script src='javascripts/jscolor/jscolor.js'></script>
+    <script>
+        $(document).ready( function(){
+            $('#templateSelect').change(function(){
+                var skillSelect = document.getElementById("templateSelect");
+                var selectedValue = skillSelect.options[skillSelect.selectedIndex].value;
+                $("#tempId").val(selectedValue);
+                $( "#formEml" ).submit();
+            });
+            $('#textstyleSelect').change(function(){
+                var textstyleSelect = document.getElementById("textstyleSelect");
+                var textstyleValue = textstyleSelect.options[textstyleSelect.selectedIndex].value;
+                $("#textstyleSelect_input").val(textstyleValue);
+            });
+        });
+    </script>
+
+</head>
+
+
+<body style='background:white !important; width:1024px !important;'>
+    <div id="attachments">
+        <div style='background:#DED5FF !important; border-style: solid;border-width: 1px; padding: 10px'>
+            <p> From:       Matthias.Stallmann@hallesche.de</p>
+            <p> To:           volker.helwig@hallesche.de; </p>
+            <p> Cc:         </p>
+            <p> Subject:    WG: FAX von '049 6232 604747' wurde erfolgreich empfangen  [HN: Okay] ['Watchdog': überprüft]</p>
+            <p style='text-align:right;'>Tue, 26 Nov 2013 10:39:18 +0100</p>
+        </div>
+        <div style='margin: 2px;border-style: solid;border-width: 1px;padding: 10px;height: 100%' id="emlContent">
+            <p>
+                <html>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><body>
+<p><font size="2" face="sans-serif"><br>
+</font><font size="2" face="sans-serif">Mit freundlichen Grüßen</font><font size="2" face="sans-serif"><br>
+<br>
+Matthias Stallmann<br>
+<br>
+Direktion - Bereich Anwendungsentwicklung/Produktive Systeme<br>
+Telefon 501 - 2311<br>
+Telefax 501 - 2349</font><font size="2" face="sans-serif"><br>
+</font><font size="1" color="#800080" face="sans-serif">----- Weitergeleitet von Matthias Stallmann/HNK</font><font size="1" color="#800080" face="sans-serif">&nbsp;am 26.11.2013 10:39</font><font size="1" color="#800080" face="sans-serif">&nbsp;-----</font><br>
+<br>
+
+<table V5DOTBL=true width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top"><td width="1%"><img width="72" height="1" src="/icons/ecblank.gif" border="0" alt=""><br>
+</td><td style="background-image:url(data:image/gif;base64,R0lGODlhWwBGAMT/AAAAAFNQU6bK8JGvzn+Vq8HU53V6f/3+/pmamOfo5OGdE+XOpd21d7doA8KET9/a19HHw8DAwLW1tf///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABEALAAAAABbAEYAQAX/YCSOZGmeaKqubFs+EuM4SC0lj6vvfI8KgkIisVA0jscCcMlsOp/QqDSqE5CsI2yCoegiG45EBCsij0USQ+DKzrbL7DXPTH+P04+t98t4FOx1boJwEQESZjt1CGuBhI5nIg9FRl8NDH+DkGVpEpqeiYChmY2eVg8PMg0QOQYGo3YtU7KztLWyc6InpIi5JqQlvD7Cw8TCeRISEw8BBggHYr4uvynBusXWeV2USAxiu71kCK2voxIIPd+CRHtfCxDjj+nxdgSuc7Sts+vbRw4QtlEMEICSCJ68Ur0icEEyo0+jAAdBkZs3EWFFATkoPpKo0WLHgyBhXRtJsqTJkygj/yw7YihjypfG/Dx7FwCASpg4fSQo4CyBhAABLGH6mBAcNZE6uShw8CWMy5AXSQyooQZoq6utEAwQRqrAJH4NFjw1GiGNHKKv7FWpJURbpUtPCEAECLAeEI4eSx1Qys/BKbSANYnjajSNATr7KoXNCDVeGgifqtgZoBZkHqWV/AbGIm6atBGLyH48NektNFKtIOd10YyuaycFYMiYsUAJkwADZvlonJe3FQgOBIrGFbX45uHVWPhGzrwi3uXGew8f5jnnRuvYs2vfvgNCAH/cw4+A0CBoAAg4xG9/ACHZgUUGOqnXfgp9gglyDQxxSXg+izwE7JQAUAAgAFl10v1QVP8mxJxyygRMHYHAWNElB911PSTggAIMmHZhgvMgI8EAyGCIzj4RIvEXiCwKYI4aauXVzG5lNJFYUwm85kQ9c+l4lmSjPHCAW3wwBg58LYYS42cT7QNWbYCI48qHdfzI5Gh6sAPGXy6qkWSFMxIHWDZaCkXhcRWdR+NrXhGJRG06zkJZbjQaZ9gIWWa2SoVKnpPcCgdRZk8dl5XZxwNUGmKicqGEdlCbYC3GpwgCqRbZlYLFCNWNDB1YmAH/IKVCQHE+UQBmTdkmi0C6fZbGl2hJshBDC3jzxk8LsvDqpMcV4QADs0EpSAAIRMTCoM2hKUIBEMzmwAJZGJQro7zC6kk9e7/+JB+L0pTqbVzx0SWmtVQmO2651fL2nLnoBrZuuuxOt9a39Mb5rrKXdgSMqPmeexSD1yD4p38EF5xdCAA7); background-repeat: no-repeat; " width="1%"><img width="220" height="1" src="/icons/ecblank.gif" border="0" alt=""><br>
+
+<ul style="padding-left: 68pt"><font size="1" face="sans-serif"><b>049 6232 604747@FAX3</b></font><br>
+<font size="1" face="sans-serif">Gesendet von: office master@FAX3</font>
+<p><font size="1" face="sans-serif">26.11.2013 10:21</font></ul>
+</td><td width="100%"><img width="1" height="1" src="/icons/ecblank.gif" border="0" alt=""><br>
+
+<ul style="padding-left: 9pt"><font size="1" face="Arial">	</font></ul>
+<font size="1" face="sans-serif">	An:	</font><font size="1" face="sans-serif">Smartfix GwSuE_P, </font><br>
+<font size="1" face="sans-serif">	Kopie:	</font><br>
+<font size="1" face="sans-serif">	Thema:	</font><font size="1" face="sans-serif">FAX von '049 6232 604747' wurde erfolgreich empfangen &nbsp;[HN: Okay]</font></td></tr>
+</table>
+<br>
+
+<ul style="padding-left: 18pt"><img width="16" height="16" src="/icons/graycol.gif" border="0" alt="Inaktiv: Details verbergen für FAX - Zusatzinformationen"><font size="2" face="sans-serif">FAX - Zusatzinformationen</font></ul>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top"><td width="100%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><hr width="100%" size="4" align="left" noshade style="color:#C00028; "><tt><font size="4" color="#C00028"><b><i>FAX - Empfang</i></b></font></tt><hr width="100%" size="4" align="left" noshade style="color:#C00028; "></ul>
+</td></tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top"><td width="20%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="sans-serif"><b>Auftragsstatus:</b></font></ul>
+</td><td width="80%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="serif">FAX von '049 6232 604747' wurde erfolgreich empfangen</font></ul>
+</td></tr>
+
+<tr valign="top"><td width="20%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="sans-serif"><b>Kennung:</b></font></ul>
+</td><td width="80%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="serif">049 6232 604747</font></ul>
+</td></tr>
+
+<tr valign="top"><td width="20%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="sans-serif"><b>Dauer:</b></font></ul>
+</td><td width="80%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="serif">28</font></ul>
+</td></tr>
+
+<tr valign="top"><td width="20%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="sans-serif"><b>Seiten empfangen:</b></font></ul>
+</td><td width="80%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="serif">1</font></ul>
+</td></tr>
+
+<tr valign="top"><td width="20%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="sans-serif"><b>Übertragungsrate:</b></font></ul>
+</td><td width="80%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="serif">14400</font></ul>
+</td></tr>
+
+<tr valign="top"><td width="20%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="sans-serif"><b>Auflösung:</b></font></ul>
+</td><td width="80%" bgcolor="#F0F0F0">
+<ul style="padding-left: 0pt"><font size="3" face="serif">100</font></ul>
+</td></tr>
+</table>
+<br>
+<br>
+<i>(Siehe angehängte Datei: 0016cf91.tif)</i><font size="2" face="sans-serif"><br>
+</font><br>
+<br>
+</body></html>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
