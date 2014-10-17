@@ -2,7 +2,6 @@ var fs = require("fs-extra");
 var phantom = require('phantom');
 var MailParser = require("mailparser").MailParser;
 var jade = require('jade');
-var ExtendFunc = require("../include/Helper.js");
 var CONFIG = require("../config");
 var _ = require("underscore");
 //var Template = require("./gnrt.js");
